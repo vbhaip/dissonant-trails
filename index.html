@@ -1,0 +1,44 @@
+<!doctype html>
+<meta charset="UTF-8">
+<html>
+<style>
+	body {
+		background: white;
+		margin: 0;
+		overflow: hidden;
+	}
+
+</style>
+	<head>
+		<title>Dissonant Paths</title>
+		<script src="https://d3js.org/d3-force.v2.min.js"></script>
+		<script src="https://d3js.org/d3-random.v2.min.js"></script>
+		<!--<script src="https://d3js.org/d3.v5.js"></script>-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.5.0/d3.min.js"></script>
+		<script src="https://unpkg.com/@stdlib/stdlib@0.0.91/dist/stdlib-flat.min.js"></script>
+
+    </head>
+	<body>
+		<div style="margin: 0">
+			<svg id="viz">
+				<defs>
+					<!-- get glow around paths -->
+					<filter id="glow">
+						<fegaussianblur class="blur" result="coloredBlur" stddeviation="2"></fegaussianblur>
+						<femerge>
+							<femergenode in="coloredBlur"></femergenode>
+				  <femergenode in="coloredBlur"></femergenode>
+				  <femergenode in="coloredBlur"></femergenode>
+							<femergenode in="SourceGraphic"></femergenode>
+						</femerge>
+					</filter>
+				</defs>
+
+			</svg>
+        </div>
+		<script src="gif.js"></script>
+		<script src="gif.worker.js"></script>
+		<script src="index.js"></script>
+	</body>
+
+</html>
